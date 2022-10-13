@@ -1,0 +1,67 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background: #1e2c4d;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.container .ham-btn{
+    border: 4px solid white;
+    border-radius: 3px;
+    outline: none;
+    background: transparent;
+    height: 180px;
+    width: 180px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.container .ham-btn .btn,
+.container .ham-btn .btn::before,
+.container .ham-btn .btn::after{
+    width: 120px;
+    height: 12px;
+    background: white;
+    border-radius: 4px;
+    transition: all 125ms ease-in-out
+}
+
+.container .ham-btn .btn::before,
+.container .ham-btn .btn::after{
+    content: '';
+    display: block;
+}
+
+.container .ham-btn .btn::before{
+    transform: translateY(-32px);
+}
+
+.container .ham-btn .btn::after{
+    transform: translateY(20px);
+}
+
+.btnClicked .container .ham-btn .btn::before{
+    opacity: 0;
+}
+
+.btnClicked .container .ham-btn .btn{
+    transform: rotate(45deg);
+}
+
+.btnClicked .container .ham-btn .btn::after{
+    transform: rotate(90deg) translateX(-12px);
+}
